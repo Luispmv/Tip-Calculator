@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --font: 'Space Mono', monospace;
+    --darkCyan: hsl(183, 100%, 15%);
+    --bodyBg: hsl(185, 41%, 84%);
+    --strongCyan:  hsl(172, 67%, 45%);
+    --tStrong: hsl(186, 14%, 43%);
+    --tStrong2: hsl(184, 14%, 56%);
+    --white:  hsl(0, 0%, 100%);
+    --inputCyan: hsl(189, 41%, 97%);
+    --text-inputs: 24px;
+}
+body{
+    background-color: var(--bodyBg);
+    display: grid;
+    place-items: center;
+}
+button{
+    cursor: pointer;
+}
+.logo{
+    padding: 2rem;
+}
+.tip-calculator{
+    display: grid;
+    place-items: center;
+    gap: 30px;
+    background-color: var(--white);
+    width: 100%;
+    border-radius: 30px;
+}
+.bill-typing-section{
+    display: grid;
+    width: 100%;
+    place-self: center;
+    place-items: center;
+    gap: 30px;
+}
+.bill-amount{
+    width: 90%;
+    font-family: var(--font);
+    display: grid;
+    gap: 10px;
+    margin-top: 30px;
+}
+.bill-amount p{
+    color: var(--tStrong2);
+}
+.bill-amount label{
+    position: relative;
+}
+.bill-amount label input{
+    width: 100%;
+    background-color: var(--inputCyan);
+    border: none;
+    outline: none;
+    height: 40px;
+    text-align: end;
+    padding-right: 15px;
+    cursor: pointer;
+    font-family: var(--font);
+    font-size: 24px;
+    border-radius: 5px;
+}
+.bill-amount label input:hover{
+    border: solid;
+    border-color: var(--strongCyan);
+}
+.bill-amount label img{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+.percentage{
+    width: 90%;
+    display: grid;
+    gap: 10px;
+}
+.percentage p{
+    font-family: var(--font);
+    color: var(--tStrong2);
+}
+.percentage .bento-percentages{
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 50% 50%;
+    width: 95%;
+    column-gap: 15px;
+    row-gap: 15px;
+}
+.bento-percentages button{
+    height: 40px;
+    background-color: var(--darkCyan);
+    color: var(--white);
+    font-size: var(--text-inputs);
+    border: none;
+    font-family: var(--font);
+    border-radius: 5px;
+}
+.bento-percentages button:hover{
+    background-color: var(--strongCyan);
+    color: var(--darkCyan);
+}
+.bento-percentages input{
+    text-align: center;
+    height: 40px;
+    font-family: var(--font);
+    background-color: var(--inputCyan);
+    border: none;
+    color: var(--tStrong2);
+    font-size: 18px;
+    border-radius: 5px;
+}
+.bento-percentages input:hover{
+    border: solid;
+    border-color: var(--strongCyan);
+    cursor: pointer;
+}
+.people{
+    display: grid;
+    gap: 10px;
+    width: 90%;
+}
+.people p{
+    color: var(--tStrong2);
+    font-family: var(--font);
+}
+.people label{
+    position: relative;
+}
+.people input{
+    width: 100%;
+    height: 40px;
+    background-color: var(--inputCyan);
+    border: none;
+    outline: none;
+    text-align: end;
+    padding-right: 15px;
+    font-family: var(--font);
+    font-size: 24px;
+    border-radius: 5px;
+}
+.people input:hover{
+    border: solid;
+    border-color: var(--strongCyan);
+    cursor: pointer;
+}
+.people img{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+.people #error-message{
+    position: absolute;
+    right: 0;
+    top: -30px;
+    color: red;
+    font-family: var(--font);
+    font-size: 12px;
+    display: none;
+}
+.results-section{
+    width: 90%;
+    background-color: var(--darkCyan);
+    padding: 1rem;
+    display: grid;
+    gap: 20px;
+    font-family: var(--font);
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.results{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.tip-amount-text strong{
+    color: var(--white);
+}
+.tip-amount-text p{
+    color: var(--tStrong);
+}
+.results h1{
+    color: var(--strongCyan);
+}
+.results-section button{
+    height: 40px;
+    background-color: var(--strongCyan);
+    font-family: var(--font);
+    color: var(--darkCyan);
+    border: none;
+    font-size: var(--text-inputs);
+    border-radius: 5px;
+}
+.results-section button:hover{
+    background-color: var(--darkCyan);
+    color: var(--white);
+}
+@media(min-width:425px){
+    .tip-calculator{
+        width: 425px;
+    }
+}
+@media(min-width:1024px){
+    .tip-calculator{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        width: 820px;
+        gap: 0;
+    }
+    .bill-typing-section{
+        padding: 1rem;
+        gap: 15px;
+    }
+    .bill-amount{
+        margin: 0;
+    }
+    .percentage .bento-percentages{
+        grid-template-columns: 32% 32% 32%;
+    }
+    .results-section{
+        height: 90%;
+        margin: 0;
+        align-items: end;
+        gap: 30px;
+    }
+    .results h1{
+        font-size: 48px;
+    }
+}
